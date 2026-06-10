@@ -3,243 +3,226 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Mechscale | CAD Design & Engineering Institute</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-body{
-margin:0;
-font-family:'Inter',sans-serif;
-background:#070b14;
-color:#e5e7eb;
-overflow-x:hidden;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --ink:#0a0d14;
+  --surface:#0f1320;
+  --panel:#161c2d;
+  --border:#1e2740;
+  --border-bright:#2e3a5a;
+  --accent:#e8500a;
+  --accent-dim:#c44208;
+  --accent-glow:rgba(232,80,10,0.15);
+  --text:#e8eaf0;
+  --muted:#8892aa;
+  --faint:#4a526b;
+  --mono:'JetBrains Mono',monospace;
+  --sans:'Space Grotesk',sans-serif;
 }
 
-/* Blueprint grid background */
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background-image:
-linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-background-size:50px 50px;
-pointer-events:none;
+body{
+  font-family:var(--sans);
+  background:var(--ink);
+  color:var(--text);
+  overflow-x:hidden;
+  line-height:1.6;
+}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;height:64px;
+  background:rgba(10,13,20,0.95);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(12px);
+}
+
+.nav-logo{cursor:pointer;display:flex;align-items:center;gap:10px}
+.logo-mark{width:34px;height:34px;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center}
+.logo-name{font-weight:700;letter-spacing:2px}
+.logo-name span{color:var(--accent)}
+
+.nav-links{display:flex;gap:10px;list-style:none}
+.nav-links a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:13px;
+  padding:6px 12px;
+}
+.nav-links a.active{color:var(--accent)}
+
+.nav-cta{
+  background:var(--accent);
+  color:#fff;
+  padding:8px 16px;
+  text-decoration:none;
+  font-size:13px;
+}
+
+/* PAGES */
+.page{
+  display:none;
+  min-height:100vh;
+  padding-top:64px;
+}
+
+.page.active{
+  display:block;
+}
+
+/* HOME SPECIAL FIX */
+#page-home.active{
+  display:flex;
+  align-items:center;
 }
 
 /* HERO */
 .hero{
-text-align:center;
-padding:120px 20px;
-background:radial-gradient(circle at top,#111827,#070b14);
+  padding:60px 40px;
+  max-width:900px;
 }
 
 .hero h1{
-font-size:3rem;
-color:#ffffff;
-letter-spacing:1px;
+  font-size:clamp(2rem,5vw,4rem);
+  color:#fff;
+  line-height:1.1;
 }
 
 .hero p{
-max-width:750px;
-margin:auto;
-color:#9ca3af;
-font-size:1.2rem;
-margin-top:15px;
+  color:var(--muted);
+  margin-top:20px;
 }
 
-.cta{
-display:inline-block;
-margin-top:25px;
-padding:14px 28px;
-background:#f97316;
-color:#fff;
-border-radius:8px;
-text-decoration:none;
-font-weight:700;
+/* BUTTONS */
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:12px 18px;
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
 }
 
-/* SECTION */
-section{
-padding:70px 20px;
-max-width:1100px;
-margin:auto;
-position:relative;
-}
-
-h2{
-text-align:center;
-font-size:2rem;
-margin-bottom:30px;
-color:#ffffff;
-letter-spacing:1px;
-}
-
-/* GRID CARDS */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-}
-
-.card{
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.08);
-padding:22px;
-border-radius:12px;
-transition:0.3s;
-backdrop-filter: blur(8px);
-}
-
-.card:hover{
-transform:translateY(-8px);
-border-color:#f97316;
-}
-
-/* TAGS */
-.tag{
-display:inline-block;
-padding:4px 10px;
-font-size:12px;
-background:#111827;
-border:1px solid #374151;
-border-radius:20px;
-margin-bottom:10px;
-color:#9ca3af;
-}
-
-/* FOUNDER */
-.founder{
-background:#0b1220;
-padding:60px 20px;
-text-align:center;
-border-top:1px solid #1f2937;
-border-bottom:1px solid #1f2937;
-}
-
-.founder-box{
-max-width:800px;
-margin:auto;
-}
-
-/* WHATSAPP */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px 18px;
-border-radius:50px;
-text-decoration:none;
-font-weight:700;
-box-shadow:0 4px 15px rgba(0,0,0,0.4);
-}
-
+/* FOOTER */
 footer{
-text-align:center;
-padding:20px;
-color:#6b7280;
-font-size:13px;
-background:#05070d;
+  display:none;
+  justify-content:space-between;
+  padding:20px 40px;
+  border-top:1px solid var(--border);
+  color:var(--faint);
+}
+
+footer.active{
+  display:flex;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  nav{padding:0 16px}
+  .nav-links{display:none}
+  .hero{padding:40px 20px}
+  footer{flex-direction:column;gap:10px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-<h1>Mechscale Design & Engineering Institute</h1>
-<p>CAD Training in Mechanical & Architectural Design — Industry-Level Skills in AutoCAD, SolidWorks, CATIA, Fusion 360, SketchUp & 3ds Max</p>
+<nav>
+  <div class="nav-logo" onclick="showPage('home')">
+    <div class="logo-mark">M</div>
+    <div class="logo-name">Mech<span>scale</span></div>
+  </div>
 
-<a class="cta" href="https://wa.me/919408694678?text=Hi%20I%20want%20free%20demo%20class">Book Free Demo Class</a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('courses');return false" id="nav-courses">Courses</a></li>
+    <li><a href="#" onclick="showPage('software');return false" id="nav-software">Software</a></li>
+    <li><a href="#" onclick="showPage('about');return false" id="nav-about">About</a></li>
+    <li><a href="#" onclick="showPage('contact');return false" id="nav-contact">Contact</a></li>
+  </ul>
+
+  <a class="nav-cta" href="https://wa.me/919408694678">Free Demo</a>
+</nav>
+
+<!-- HOME -->
+<div class="page active" id="page-home">
+  <div class="hero">
+    <h1>Where Engineers Learn CAD at Industry Scale</h1>
+    <p>AutoCAD, SolidWorks, CATIA, Fusion 360 — learn real engineering workflows, not tutorials.</p>
+    <a class="btn" href="https://wa.me/919408694678">Book Free Demo</a>
+  </div>
 </div>
 
-<!-- TRUST -->
-<section>
-<h2>Engineering Training Focus</h2>
-<div class="grid">
-
-<div class="card">
-<div class="tag">Mechanical CAD</div>
-<p>AutoCAD, SolidWorks, Fusion 360, Inventor, Solid Edge</p>
+<!-- COURSES -->
+<div class="page" id="page-courses">
+  <div class="hero">
+    <h1>Courses</h1>
+    <p>Mechanical CAD, Architectural CAD, and advanced modules.</p>
+  </div>
 </div>
-
-<div class="card">
-<div class="tag">Architectural CAD</div>
-<p>AutoCAD 2D/3D, SketchUp, 3ds Max, Rendering Tools</p>
-</div>
-
-<div class="card">
-<div class="tag">Simulation Ready</div>
-<p>Industry workflow understanding for real engineering projects</p>
-</div>
-
-</div>
-</section>
 
 <!-- SOFTWARE -->
-<section>
-<h2>Software Ecosystem</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Design Tools</h3>
-<p>AutoCAD • SolidWorks • CATIA • Creo • NX CAD</p>
+<div class="page" id="page-software">
+  <div class="hero">
+    <h1>Software Stack</h1>
+    <p>AutoCAD, SolidWorks, CATIA, SketchUp, V-Ray, and more.</p>
+  </div>
 </div>
 
-<div class="card">
-<h3>Mechanical Systems</h3>
-<p>Fusion 360 • Inventor • Solid Edge • FreeCAD</p>
+<!-- ABOUT -->
+<div class="page" id="page-about">
+  <div class="hero">
+    <h1>About Mechscale</h1>
+    <p>Built by a practitioner for real engineering education.</p>
+  </div>
 </div>
 
-<div class="card">
-<h3>Visualization</h3>
-<p>SketchUp • 3ds Max • V-Ray • Corona • Enscape</p>
+<!-- CONTACT -->
+<div class="page" id="page-contact">
+  <div class="hero">
+    <h1>Contact</h1>
+    <p>WhatsApp: +91 94086 94678</p>
+  </div>
 </div>
 
-</div>
-</section>
-
-<!-- FOUNDER -->
-<section class="founder">
-<div class="founder-box">
-<h2>Founder</h2>
-<h3>Hardik Acharya</h3>
-<p>
-Mechanical Design Professional with <b>12+ years of experience</b> in CAD training and engineering design industry.
-Founder of Mechscale Design & Engineering Institute focused on practical, industry-oriented engineering education.
-</p>
-</div>
-</section>
-
-<!-- CTA -->
-<section>
-<h2>Start Your CAD Career</h2>
-<p style="text-align:center;color:#9ca3af;">
-Get guidance, demo class, and course details directly on WhatsApp
-</p>
-
-<div style="text-align:center;margin-top:20px;">
-<a class="cta" href="https://wa.me/919408694678?text=Hi%20I%20want%20to%20join%20Mechscale%20CAD%20training">
-Contact on WhatsApp
-</a>
-</div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-© 2025 Mechscale Design & Engineering Institute | All Rights Reserved
+<footer id="site-footer">
+  <div>© 2026 Mechscale Institute</div>
+  <div>Surat, Gujarat</div>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/919408694678">WhatsApp</a>
+<script>
+const pages = ['home','courses','software','about','contact'];
+
+function showPage(id){
+
+  pages.forEach(p=>{
+    document.getElementById('page-'+p).classList.remove('active');
+    const nav = document.getElementById('nav-'+p);
+    if(nav) nav.classList.remove('active');
+  });
+
+  document.getElementById('page-'+id).classList.add('active');
+
+  const activeNav = document.getElementById('nav-'+id);
+  if(activeNav) activeNav.classList.add('active');
+
+  // footer only for non-home pages
+  document.getElementById('site-footer')
+    .classList.toggle('active', id !== 'home');
+
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// init
+showPage('home');
+</script>
 
 </body>
 </html>
