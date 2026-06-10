@@ -3,91 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mechscale Design & Engineering Institute</title>
+
+<title>Mechscale CAD Training Institute | AutoCAD SolidWorks CATIA NX</title>
+
+<meta name="description" content="Mechscale Design & Engineering Institute offers professional CAD training in AutoCAD, SolidWorks, CATIA, Creo, and NX CAD. 12+ years experience, 500+ students trained. Online and offline courses in Surat.">
+
+<meta name="keywords" content="CAD training, AutoCAD course, SolidWorks training, CATIA classes, NX CAD course, mechanical design institute Surat">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter', sans-serif;
-}
-
 body{
+margin:0;
+font-family:'Inter',sans-serif;
 background:#0b1220;
-color:white;
+color:#fff;
+scroll-behavior:smooth;
 }
 
-.hero{
+header{
 padding:100px 20px;
 text-align:center;
-background:linear-gradient(135deg,#0f172a,#1e293b);
+background:linear-gradient(135deg,#0f172a,#111827);
 }
 
-.hero h1{
+header h1{
 font-size:3rem;
-font-weight:700;
+margin-bottom:10px;
 }
 
-.hero p{
-margin-top:15px;
-font-size:1.2rem;
+header p{
 color:#cbd5e1;
+max-width:750px;
+margin:auto;
+font-size:1.2rem;
 }
 
 .btn{
 display:inline-block;
 margin-top:25px;
-padding:12px 25px;
+padding:14px 28px;
 background:#f97316;
-color:white;
+color:#fff;
+border-radius:10px;
 text-decoration:none;
-border-radius:8px;
+font-weight:700;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+.trust{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+padding:20px;
+background:#0f172a;
+color:#cbd5e1;
 font-weight:600;
 }
 
 section{
-padding:60px 20px;
+padding:70px 20px;
 max-width:1100px;
 margin:auto;
 }
 
 h2{
 font-size:2rem;
-margin-bottom:20px;
-color:#f8fafc;
+margin-bottom:25px;
 }
 
-.cards{
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
 .card{
-background:#111827;
+background:rgba(255,255,255,0.05);
 padding:20px;
-border-radius:12px;
-border:1px solid #1f2937;
+border-radius:15px;
+border:1px solid rgba(255,255,255,0.1);
 transition:0.3s;
+backdrop-filter: blur(10px);
 }
 
 .card:hover{
-transform:translateY(-5px);
+transform:translateY(-8px);
 border-color:#f97316;
 }
 
-.highlight{
-color:#f97316;
-font-weight:700;
+.form{
+background:#111827;
+padding:25px;
+border-radius:15px;
 }
 
-.contact{
-text-align:center;
-padding:60px 20px;
-background:#0f172a;
+input, select, textarea{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:15px;
+border-radius:8px;
+border:none;
+outline:none;
+}
+
+.submit{
+background:#f97316;
+color:white;
+padding:12px;
+border:none;
+width:100%;
+border-radius:8px;
+font-weight:700;
+cursor:pointer;
 }
 
 footer{
@@ -96,76 +130,100 @@ padding:20px;
 background:#020617;
 color:#94a3b8;
 }
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+}
 </style>
+
 </head>
 
 <body>
 
-<div class="hero">
+<header>
 <h1>Mechscale Design & Engineering Institute</h1>
-<p>Industry-Oriented CAD Training for Mechanical Engineers</p>
+<p>Professional CAD Training in AutoCAD, SolidWorks, CATIA, Creo & NX CAD with industry projects and 12+ years of experience.</p>
 
-<a class="btn" href="https://wa.me/919408694678" target="_blank">
-Enroll on WhatsApp
-</a>
+<a class="btn" href="https://wa.me/919408694678">Book Free Demo Class</a>
+</header>
 
-<p style="margin-top:20px;">
-<span class="highlight">12+ Years Experience</span> | 500+ Students Trained
-</p>
+<div class="trust">
+<div>✔ 12+ Years Experience</div>
+<div>✔ 500+ Students Trained</div>
+<div>✔ Online + Offline Training</div>
 </div>
-
-<section>
-<h2>About Me</h2>
-<p>
-I am <b>Hardik Acharya</b>, a Mechanical Design Professional with 12+ years of experience in CAD industry training.
-</p>
-<br>
-<p>
-Mechscale focuses on practical, industry-ready CAD skills for students and engineers.
-</p>
-</section>
 
 <section>
 <h2>Courses Offered</h2>
+<div class="grid">
 
-<div class="cards">
-
-<div class="card">AutoCAD</div>
-<div class="card">SolidWorks</div>
-<div class="card">CATIA</div>
-<div class="card">Creo</div>
-<div class="card">NX CAD</div>
+<div class="card">AutoCAD – 2D Drafting & Engineering Drawings</div>
+<div class="card">SolidWorks – 3D Modeling & Assemblies</div>
+<div class="card">CATIA – Product Design & Surface Modeling</div>
+<div class="card">Creo – Parametric Design</div>
+<div class="card">NX CAD – Advanced Engineering Design</div>
 
 </div>
 </section>
 
 <section>
-<h2>Why Choose Mechscale</h2>
+<h2>Why Students Choose Us</h2>
+<div class="grid">
 
-<div class="cards">
-
-<div class="card">Industry Practical Training</div>
-<div class="card">Real Projects</div>
-<div class="card">1-to-1 Mentorship</div>
-<div class="card">Online Classes</div>
-<div class="card">Career Guidance</div>
+<div class="card">Industry-Based Training</div>
+<div class="card">Real Live Projects</div>
+<div class="card">Personal Mentorship</div>
+<div class="card">Job-Oriented Skills</div>
 
 </div>
 </section>
 
-<section class="contact">
-<h2>Contact</h2>
-<p>📞 +91 9408694678</p>
-<p>📧 h.acharya966@gmail.com</p>
+<section>
+<h2>Student Inquiry</h2>
 
-<a class="btn" href="https://wa.me/919408694678">
-Start Learning Now
-</a>
+<div class="form">
+
+<form action="https://formspree.io/f/your-form-id" method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="tel" name="phone" placeholder="Phone Number" required>
+
+<select name="course">
+<option>AutoCAD</option>
+<option>SolidWorks</option>
+<option>CATIA</option>
+<option>Creo</option>
+<option>NX CAD</option>
+</select>
+
+<textarea name="message" placeholder="Your Message"></textarea>
+
+<button class="submit" type="submit">Send Inquiry</button>
+
+</form>
+
+</div>
+</section>
+
+<section>
+<h2>About Founder</h2>
+<p><b>Hardik Acharya</b> – Mechanical Design Professional with 12+ years experience in CAD training and engineering design.</p>
 </section>
 
 <footer>
 © 2025 Mechscale Design & Engineering Institute
 </footer>
+
+<a class="whatsapp" href="https://wa.me/919408694678">WhatsApp</a>
 
 </body>
 </html>
