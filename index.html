@@ -3,478 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Mechscale Design & Engineering Institute | Live Online CAD Training</title>
-
-<meta name="description" content="Learn AutoCAD, SolidWorks, CATIA, Fusion 360, SketchUp and 3ds Max through live, instructor-led online CAD training at Mechscale.">
+<title>Mechscale Design & Engineering Institute</title>
+<meta name="description" content="Live CAD Training in AutoCAD, SolidWorks, CATIA, NX CAD, Fusion 360, SketchUp, Lumion and 3ds Max.">
 
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
---bg:#030712;
---card:#0b1329;
+--bg:#050816;
+--card:#111827;
 --accent:#f97316;
---accent-rgb:249,115,22;
---text:#f3f4f6;
---muted:#9ca3af;
---border:#1f2937;
+--text:#f8fafc;
+--muted:#94a3b8;
 }
-
 *{margin:0;padding:0;box-sizing:border-box}
-
-html{
-scroll-behavior:smooth;
-scroll-padding-top:90px;
-}
-
-/* Premium Dark Scrollbar */
-::-webkit-scrollbar {
-width:10px;
-}
-::-webkit-scrollbar-track {
-background:var(--bg);
-}
-::-webkit-scrollbar-thumb {
-background:#1f2937;
-border-radius:5px;
-border:2px solid var(--bg);
-}
-::-webkit-scrollbar-thumb:hover {
-background:var(--accent);
-}
-
+html{scroll-behavior:smooth}
 body{
 font-family:'Space Grotesk',sans-serif;
 background:var(--bg);
 color:var(--text);
-overflow-x:hidden;
-letter-spacing:-0.02em;
+line-height:1.6;
 }
-
-body::before{
-content:"";
-position:fixed;
-inset:0;
-background-image:
-linear-gradient(rgba(255,255,255,.015) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,.015) 1px, transparent 1px);
-background-size:60px 60px;
-pointer-events:none;
-z-index:-1;
-}
-
 nav{
-position:fixed;
+position:sticky;
 top:0;
-left:0;
-width:100%;
-height:80px;
+background:rgba(5,8,22,.95);
+backdrop-filter:blur(10px);
+padding:18px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:0 8%;
-background:rgba(3,7,18,.75);
-backdrop-filter:blur(16px);
--webkit-backdrop-filter:blur(16px);
-border-bottom:1px solid rgba(255,255,255,0.05);
-z-index:1000;
+z-index:999;
 }
-
-.logo{
-font-size:1.6rem;
-font-weight:700;
-letter-spacing:-0.04em;
-flex-shrink:0;
-}
-
+.logo{font-size:1.6rem;font-weight:700}
 .logo span{color:var(--accent)}
-
-nav ul{
-display:flex;
-gap:30px;
-list-style:none;
-}
-
-nav a{
-text-decoration:none;
-color:var(--muted);
-font-weight:500;
-font-size:0.95rem;
-transition:color 0.2s ease;
-}
-
-nav a:hover{
-color:var(--text);
-}
-
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:140px 20px 100px 20px;
-position:relative;
-}
-
-.hero::after {
-content:"";
-position:absolute;
-top:20%;
-left:50%;
-transform:translate(-50%, -50%);
-width:300px;
-height:300px;
-background:rgba(var(--accent-rgb), 0.15);
-filter:blur(100px);
-pointer-events:none;
-z-index:-1;
-}
-
-.badge {
-display:inline-flex;
-align-items:center;
-gap:8px;
-background:rgba(var(--accent-rgb), 0.1);
-border:1px solid rgba(var(--accent-rgb), 0.3);
-color:var(--accent);
-padding:6px 16px;
-border-radius:100px;
-font-size:0.85rem;
-font-weight:600;
-margin-bottom:25px;
-text-transform:uppercase;
-letter-spacing:0.05em;
-}
-
-.badge span {
-width:6px;
-height:6px;
-background:var(--accent);
-border-radius:50%;
-display:inline-block;
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse {
-0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0.7); }
-70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(var(--accent-rgb), 0); }
-100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0); }
-}
-
-.hero h1{
-font-size:clamp(2.8rem,6.5vw,5.5rem);
-line-height:1.05;
-margin-bottom:25px;
-font-weight:700;
-letter-spacing:-0.04em;
-}
-
-.hero h1 span{
-background:linear-gradient(to right, #fff, var(--accent));
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.hero p{
-max-width:750px;
-margin:auto;
-color:var(--muted);
-font-size:1.2rem;
-line-height:1.7;
-}
-
+nav a{color:var(--muted);text-decoration:none;margin-left:20px}
+section{padding:90px 8%}
+.hero{text-align:center;padding-top:120px}
+.hero h1{font-size:clamp(3rem,7vw,5.5rem);line-height:1.05}
+.hero span{color:var(--accent)}
+.hero p{max-width:850px;margin:20px auto;color:var(--muted)}
 .btn{
 display:inline-block;
-margin-top:35px;
-padding:16px 36px;
 background:var(--accent);
-color:white;
-text-decoration:none;
+color:#fff;
+padding:15px 30px;
 border-radius:12px;
-font-weight:600;
-box-shadow:0 4px 20px rgba(var(--accent-rgb), 0.25);
-transition:all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.btn:hover{
-transform:translateY(-2px);
-box-shadow:0 6px 24px rgba(var(--accent-rgb), 0.4);
-opacity:0.95;
-}
-
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:25px;
-margin-top:70px;
-max-width:950px;
-margin-inline:auto;
-}
-
-.stat{
-background:rgba(255,255,255,.02);
-padding:30px 25px;
-border-radius:20px;
-border:1px solid rgba(255,255,255,.05);
-backdrop-filter:blur(5px);
-}
-
-.stat h3{
-color:var(--accent);
-font-size:2.5rem;
+text-decoration:none;
 font-weight:700;
-margin-bottom:5px;
+margin:8px;
 }
-
-.stat p {
-font-size:0.95rem;
-color:var(--muted);
-}
-
-section{
-padding:100px 8%;
-}
-
-.section-title{
-font-size:2.8rem;
-text-align:center;
-margin-bottom:15px;
-letter-spacing:-0.03em;
-}
-
-.section-sub{
-text-align:center;
-color:var(--muted);
-margin-bottom:60px;
-font-size:1.1rem;
-}
-
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:24px;
 }
-
 .card{
-background:linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
-border:1px solid rgba(255,255,255,.05);
-padding:35px;
-border-radius:24px;
-transition:all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+background:var(--card);
+padding:28px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
 }
-
-.card:hover{
-transform:translateY(-6px);
-border-color:rgba(var(--accent-rgb), 0.4);
-background:linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
-box-shadow:0 20px 40px rgba(0,0,0,0.3);
-}
-
-.card h3{
-margin-bottom:15px;
-font-size:1.4rem;
-font-weight:600;
-}
-
-.card p{
-color:var(--muted);
-line-height:1.7;
-font-size:1rem;
-}
-
-.timeline{
-max-width:800px;
-margin:auto;
-display:grid;
-gap:20px;
-}
-
-.step{
+.stat{text-align:center}
+.stat h3{font-size:2.4rem;color:var(--accent)}
+.section-title{text-align:center;font-size:2.5rem;margin-bottom:10px}
+.section-sub{text-align:center;color:var(--muted);margin-bottom:50px}
+.testimonial{
+background:var(--card);
 padding:24px;
-background:rgba(255,255,255,0.02);
-border:1px solid rgba(255,255,255,0.05);
 border-left:4px solid var(--accent);
-border-radius:14px;
-font-weight:500;
-font-size:1.1rem;
-transition:transform 0.2s ease;
+border-radius:12px;
 }
-
-.step:hover {
-transform: translateX(4px);
-background:rgba(255,255,255,0.03);
-}
-
-.founder{
-background:linear-gradient(to bottom, #030712, #0b1120, #030712);
-text-align:center;
-border-y:1px solid rgba(255,255,255,0.02);
-}
-
-.founder h3 {
-font-size:1.6rem;
-margin-bottom:15px;
-color: #fff;
-}
-
-.founder p{
-max-width:750px;
-margin:auto;
-color:var(--muted);
-line-height:1.8;
-font-size:1.1rem;
-}
-
-.faq{
-max-width:800px;
-margin:auto;
-}
-
-details{
-background:rgba(255,255,255,0.02);
-margin-bottom:15px;
-padding:22px;
-border-radius:14px;
-border:1px solid rgba(255,255,255,0.05);
-transition:all 0.3s ease;
-}
-
-details[open] {
-border-color: rgba(var(--accent-rgb), 0.3);
-background: rgba(255,255,255,0.03);
-}
-
-summary{
-cursor:pointer;
-font-weight:600;
-font-size:1.1rem;
-list-style: none;
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-
-summary::-webkit-details-marker {
-display: none;
-}
-
-summary::after {
-content: "→";
-color: var(--accent);
-transition: transform 0.3s ease;
-font-weight: 400;
-}
-
-details[open] summary::after {
-transform: rotate(90deg);
-}
-
-.contact{
-text-align:center;
-}
-
-.contact-form{
-max-width:550px;
-margin:40px auto 20px auto;
-display:grid;
-gap:20px;
-}
-
-.sr-only {
-position:absolute;
-width:1px;
-height:1px;
-padding:0;
-margin:-1px;
-overflow:hidden;
-clip:rect(0,0,0,0);
-border:0;
-}
-
-input,textarea{
+.timeline .card{text-align:center}
+.faq details{
+background:var(--card);
 padding:18px;
-background:rgba(255,255,255,0.02);
-border:1px solid rgba(255,255,255,0.08);
-color:white;
-border-radius:14px;
-font-family:inherit;
-font-size:1rem;
-transition:all 0.3s ease;
+border-radius:12px;
+margin-bottom:12px;
 }
-
-input:focus,textarea:focus{
-outline:none;
-border-color:var(--accent);
-background:rgba(255,255,255,0.04);
-box-shadow: 0 0 0 4px rgba(var(--accent-rgb), 0.1);
-}
-
-textarea{
-resize:vertical;
-}
-
-.submit-btn{
-border:none;
-cursor:pointer;
-margin-top:10px;
-}
-
-footer{
-padding:40px 20px;
+.faq summary{cursor:pointer;font-weight:600}
+.cta{
 text-align:center;
-border-top:1px solid rgba(255,255,255,0.05);
+background:linear-gradient(135deg,#111827,#1f2937);
+border-radius:24px;
+}
+footer{
+padding:40px;
+text-align:center;
 color:var(--muted);
-font-size:0.9rem;
-line-height:1.6;
+border-top:1px solid rgba(255,255,255,.08);
 }
-
-.whatsapp{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#25D366;
-color:white;
-padding:16px 24px;
-border-radius:100px;
-text-decoration:none;
-font-weight:700;
-z-index:999;
-box-shadow:0 8px 24px rgba(37, 211, 102, 0.3);
-transition:all 0.3s ease;
-display:flex;
-align-items:center;
-gap:8px;
-}
-
-.whatsapp:hover {
-transform:translateY(-3px);
-box-shadow:0 12px 28px rgba(37, 211, 102, 0.4);
-}
-
 @media(max-width:768px){
-nav{
-padding:0 6%;
-}
-nav ul{
-display:flex;
-gap:20px;
-overflow-x:auto;
-padding: 5px 0;
-max-width:60%;
-white-space:nowrap;
--webkit-overflow-scrolling:touch;
-}
-nav ul::-webkit-scrollbar {
-display:none;
-}
-nav a{
-font-size:0.9rem;
-}
-section {
-padding:80px 6%;
-}
+nav div:last-child{display:none}
+section{padding:70px 5%}
 }
 </style>
 </head>
@@ -482,177 +103,135 @@ padding:80px 6%;
 
 <nav>
 <div class="logo">Mech<span>scale</span></div>
-
-<ul>
-<li><a href="#courses">Courses</a></li>
-<li><a href="#software">Software</a></li>
-<li><a href="#roadmap">Roadmap</a></li>
-<li><a href="#founder">Founder</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+<div>
+<a href="#courses">Courses</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
 
 <section class="hero">
-<header>
-<div class="badge"><span></span>100% Live Online • Available Globally</div>
-
-<h1>Industry Ready <span>CAD Training</span> From Anywhere</h1>
-
+<p>500+ Students Trained • 12+ Years Experience • 100% Live Interactive Training</p>
+<h1>Become a <span>Job‑Ready CAD Designer</span></h1>
 <p>
-Master AutoCAD, SolidWorks, CATIA, Fusion 360, SketchUp and 3ds Max through <strong>live, instructor-led online sessions</strong>, practical industry projects, and real engineering workflows.
+Master AutoCAD, SolidWorks, CATIA, NX CAD, Fusion 360, SketchUp, Lumion and 3ds Max through practical projects, live mentoring and career guidance.
 </p>
+<a class="btn" href="https://wa.me/919408694678">Book Free Demo Class</a>
+<a class="btn" href="#contact">Get Course Details</a>
 
-<a href="https://wa.me/919408694678" class="btn">
-Book Free Live Demo Class
-</a>
-
-<div class="stats">
-<div class="stat">
-<h3>12+</h3>
-<p>Years Experience</p>
+<div class="grid" style="margin-top:50px">
+<div class="card stat"><h3>500+</h3><p>Students Trained</p></div>
+<div class="card stat"><h3>12+</h3><p>Years Experience</p></div>
+<div class="card stat"><h3>15+</h3><p>Software Tools</p></div>
+<div class="card stat"><h3>100%</h3><p>Live Sessions</p></div>
 </div>
-
-<div class="stat">
-<h3>500+</h3>
-<p>Students Trained Online</p>
-</div>
-
-<div class="stat">
-<h3>8+</h3>
-<p>CAD Platforms Covered</p>
-</div>
-</div>
-</header>
 </section>
 
 <section id="courses">
-<h2 class="section-title">Professional Online CAD Programs</h2>
-<p class="section-sub">Live Interactive Mechanical & Architectural Training</p>
+<h2 class="section-title">Professional Training Programs</h2>
+<p class="section-sub">Mechanical CAD • Architecture • Interior Design</p>
 
 <div class="grid">
 <div class="card">
 <h3>Mechanical CAD Design</h3>
-<p>
-AutoCAD, SolidWorks, CATIA, Creo, NX CAD, Fusion 360, Inventor and Solid Edge. Delivered via live streaming with real-time feedback.
-</p>
+<p>AutoCAD, SolidWorks, CATIA, Creo, NX CAD, Fusion 360, Inventor and Solid Edge.</p>
 </div>
 
 <div class="card">
-<h3>Architectural CAD Design</h3>
-<p>
-AutoCAD 2D/3D, SketchUp, 3ds Max, V-Ray, Corona, Enscape and Lumion. Step-by-step interactive screen-share mentoring.
-</p>
+<h3>Architecture & Interior Design</h3>
+<p>AutoCAD, SketchUp, Lumion, Enscape, V‑Ray and 3ds Max.</p>
 </div>
 
-<div class="card" style="border-color: rgba(var(--accent-rgb), 0.35);">
-<h3>The Live Online Edge</h3>
-<p>
-Get real-time doubt clearing, class recordings for revision, screen-sharing troubleshooting, and premium engineering documentation standards.
-</p>
+<div class="card">
+<h3>Career Preparation</h3>
+<p>Portfolio development, interview preparation, project guidance and industry mentoring.</p>
 </div>
 </div>
 </section>
 
-<section id="software">
-<h2 class="section-title">Software Ecosystem</h2>
-<p class="section-sub">Comprehensive multi-platform training suite right on your screen</p>
+<section id="portfolio">
+<h2 class="section-title">Student Project Portfolio</h2>
+<p class="section-sub">Real-world projects students build during training</p>
 
 <div class="grid">
-<div class="card">
-<h3>Mechanical Tools</h3>
-<p>AutoCAD • SolidWorks • CATIA • Creo • NX</p>
-</div>
-
-<div class="card">
-<h3>Design Tools</h3>
-<p>Fusion 360 • Inventor • Solid Edge</p>
-</div>
-
-<div class="card">
-<h3>Visualization</h3>
-<p>SketchUp • 3ds Max • V-Ray • Lumion • Enscape</p>
-</div>
+<div class="card"><h3>🏗 Architectural Elevation Design</h3><p>Professional residential and commercial elevation development.</p></div>
+<div class="card"><h3>🏠 Villa & Residential Planning</h3><p>2D drafting, planning and 3D architectural visualization.</p></div>
+<div class="card"><h3>🛋 Interior Visualization</h3><p>Living rooms, kitchens and commercial interior rendering.</p></div>
+<div class="card"><h3>⚙ Mechanical Assemblies</h3><p>Industrial assemblies and machine design projects.</p></div>
+<div class="card"><h3>🔩 CATIA Product Design</h3><p>Part modeling, surfacing and manufacturing workflows.</p></div>
+<div class="card"><h3>🚀 NX CAD Engineering Projects</h3><p>Advanced mechanical and industrial design applications.</p></div>
 </div>
 </section>
 
-<section id="roadmap">
-<h2 class="section-title">Online Learning Roadmap</h2>
-<p class="section-sub">Your structured remote path from beginner to industry-recognized designer</p>
+<section id="reviews">
+<h2 class="section-title">Student Success Stories</h2>
+<p class="section-sub">Replace with your actual student reviews</p>
 
-<div class="timeline">
-<div class="step">01 — CAD Fundamentals & Software Setup</div>
-<div class="step">02 — Live 2D Drafting Sessions</div>
-<div class="step">03 — 3D Modeling Over Interactive Screen-Share</div>
-<div class="step">04 — Remote Collaborative Assemblies & Projects</div>
-<div class="step">05 — Industry Standard Workflows</div>
-<div class="step">06 — Digital Portfolio Building & Global Career Guidance</div>
+<div class="grid">
+<div class="testimonial">“Excellent practical training and project guidance. Highly recommended.”</div>
+<div class="testimonial">“The live classes helped me become confident and job-ready.”</div>
+<div class="testimonial">“Much better than prerecorded courses. Real mentorship.”</div>
 </div>
 </section>
 
-<section id="founder" class="founder">
+<section>
+<h2 class="section-title">Learning Roadmap</h2>
+
+<div class="grid timeline">
+<div class="card">1. CAD Fundamentals</div>
+<div class="card">2. 2D Drafting</div>
+<div class="card">3. 3D Modeling</div>
+<div class="card">4. Projects & Assemblies</div>
+<div class="card">5. Industry Workflow</div>
+<div class="card">6. Portfolio & Career Guidance</div>
+</div>
+</section>
+
+<section>
 <h2 class="section-title">Founder & Head Mentor</h2>
+
+<div class="card" style="max-width:900px;margin:auto;text-align:center">
 <h3>Hardik Acharya</h3>
 <p>
-Mechanical Design Professional with 12+ years of CAD training and engineering design experience. Founder of Mechscale Design & Engineering Institute focused on bringing practical, industry-oriented physical classroom quality right to your digital screen.
+Mechanical Design Professional with 12+ years of CAD training and engineering design experience focused on industry-ready education.
 </p>
+</div>
 </section>
 
 <section class="faq">
 <h2 class="section-title">Frequently Asked Questions</h2>
-<p class="section-sub">Clear answers to your logistics inquiries</p>
-
-<details open>
-<summary>Are these classes online or offline?</summary>
-<p style="margin-top: 14px; color: var(--muted); line-height: 1.6;">Our courses are <strong>strictly 100% online through live, interactive virtual rooms</strong>. They are NOT pre-recorded video packs. You get to interact live with the instructor, share screens to debug complex structures, and get lifetime access to all recorded versions of your sessions.</p>
-</details>
 
 <details>
 <summary>Do I need prior CAD knowledge?</summary>
-<p style="margin-top: 14px; color: var(--muted); line-height: 1.6;">No experience is required. All programs are engineered built from the ground up, starting directly with fundamental concepts.</p>
+<p>No. Training starts from fundamentals and progresses to advanced projects.</p>
 </details>
 
 <details>
-<summary>Are projects included?</summary>
-<p style="margin-top: 14px; color: var(--muted); line-height: 1.6;">Yes. You will work on industry-standard, practical blueprints and assemblies modeled on actual manufacturing workflows, submitted digitally for review.</p>
+<summary>Are classes live?</summary>
+<p>Yes. All sessions are live and instructor-led.</p>
 </details>
 
 <details>
-<summary>Is placement guidance available?</summary>
-<p style="margin-top: 14px; color: var(--muted); line-height: 1.6;">Absolutely. We provide dedicated end-to-end cloud portfolio construction, resume reviews, and remote mechanical/architectural career guidance.</p>
+<summary>Will I build projects?</summary>
+<p>Yes. Practical industry-oriented projects are included.</p>
+</details>
+
+<details>
+<summary>Is career guidance available?</summary>
+<p>Yes. Portfolio building and interview guidance are provided.</p>
 </details>
 </section>
 
-<section id="contact" class="contact">
-<h2 class="section-title">Connect From Anywhere</h2>
-<p>Get instant batch timings, online link details, and free counselling.</p>
-
-<form class="contact-form" action="#" method="POST">
-<label for="student-name" class="sr-only">Your Name</label>
-<input type="text" id="student-name" placeholder="Your Name" required>
-
-<label for="phone-number" class="sr-only">Phone Number</label>
-<input type="tel" id="phone-number" placeholder="Phone Number" required>
-
-<label for="message" class="sr-only">Your Message</label>
-<textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-
-<button type="submit" class="btn submit-btn">Request Online Demo Access</button>
-</form>
-
-<p style="margin-top:25px; font-size:0.95rem; color:var(--muted)">Or connect instantly with an online advisor</p>
-<a href="https://wa.me/919408694678" class="btn" style="margin-top:12px; background:#25D366; box-shadow:0 4px 20px rgba(37,211,102,0.25);">
-Chat on WhatsApp
-</a>
+<section id="contact" class="cta">
+<h2 class="section-title">Next Batch Enrolling Now</h2>
+<p class="section-sub">Limited seats available. Contact us today.</p>
+<a class="btn" href="https://wa.me/919408694678">Chat on WhatsApp</a>
 </section>
 
 <footer>
-© 2026 Mechscale Design & Engineering Institute | Live Interactive Online CAD Training<br>
-Headquartered in Surat, Gujarat — Available Globally
+© 2026 Mechscale Design & Engineering Institute • Surat, Gujarat • Available Globally
 </footer>
-
-<a href="https://wa.me/919408694678" class="whatsapp" aria-label="Contact us on WhatsApp">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.4.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.455L0 24zm6.59-4.846c1.66.986 3.298 1.448 4.825 1.451 5.436 0 9.86-4.37 9.863-9.736.001-2.599-1.01-5.043-2.848-6.882-1.839-1.838-4.285-2.85-6.887-2.851-5.441 0-9.865 4.373-9.867 9.74-.001 1.942.505 3.426 1.464 4.953l-.995 3.637 3.738-.973zm8.905-6.163c-.284-.141-1.677-.827-1.935-.921-.259-.095-.447-.141-.636.141-.188.281-.727.921-.89 1.108-.163.188-.327.211-.61.07-2.122-1.063-3.483-2.311-4.244-3.62-.2-.344.2-.319.572-1.063.056-.113.028-.211-.014-.296-.042-.085-.447-1.077-.612-1.476-.161-.389-.323-.335-.445-.341-.114-.007-.245-.007-.375-.007-.13 0-.341.049-.519.246-.179.197-.684.669-.684 1.629s.697 1.888.795 2.018c.098.13 1.374 2.1 3.329 2.942.465.2.827.321 1.11.41.468.149.893.128 1.229.078.375-.056 1.677-.684 1.914-1.345.237-.662.237-1.229.166-1.345-.07-.116-.259-.203-.542-.344z"/></svg> WhatsApp
-</a>
 
 </body>
 </html>
