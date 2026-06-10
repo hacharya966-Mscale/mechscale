@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mechscale Design & Engineering Institute | CAD Training</title>
-
-<meta name="description" content="Mechscale CAD Training Institute offers AutoCAD, SketchUp, 3ds Max, V-Ray, Fusion 360, Inventor, Solid Edge. 12+ years experience, 500+ students trained. Online CAD training.">
+<title>Mechscale | CAD Design & Engineering Institute</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -14,81 +12,88 @@
 body{
 margin:0;
 font-family:'Inter',sans-serif;
-background:#0b1220;
-color:#fff;
+background:#070b14;
+color:#e5e7eb;
+overflow-x:hidden;
 }
 
-header{
-padding:100px 20px;
+/* Blueprint grid background */
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:
+linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+background-size:50px 50px;
+pointer-events:none;
+}
+
+/* HERO */
+.hero{
 text-align:center;
-background:linear-gradient(135deg,#0f172a,#111827);
+padding:120px 20px;
+background:radial-gradient(circle at top,#111827,#070b14);
 }
 
-header h1{
+.hero h1{
 font-size:3rem;
-margin-bottom:10px;
+color:#ffffff;
+letter-spacing:1px;
 }
 
-header p{
-color:#cbd5e1;
-max-width:800px;
+.hero p{
+max-width:750px;
 margin:auto;
+color:#9ca3af;
 font-size:1.2rem;
+margin-top:15px;
 }
 
-.btn{
+.cta{
 display:inline-block;
 margin-top:25px;
 padding:14px 28px;
 background:#f97316;
 color:#fff;
-border-radius:10px;
+border-radius:8px;
 text-decoration:none;
 font-weight:700;
-transition:0.3s;
 }
 
-.btn:hover{
-transform:scale(1.05);
-}
-
-.trust{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-padding:20px;
-background:#0f172a;
-color:#cbd5e1;
-font-weight:600;
-}
-
+/* SECTION */
 section{
 padding:70px 20px;
 max-width:1100px;
 margin:auto;
+position:relative;
 }
 
 h2{
-font-size:2rem;
-margin-bottom:25px;
 text-align:center;
+font-size:2rem;
+margin-bottom:30px;
+color:#ffffff;
+letter-spacing:1px;
 }
 
+/* GRID CARDS */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:20px;
 }
 
 .card{
-background:rgba(255,255,255,0.05);
-padding:20px;
-border-radius:15px;
-border:1px solid rgba(255,255,255,0.1);
-backdrop-filter: blur(10px);
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+padding:22px;
+border-radius:12px;
 transition:0.3s;
-text-align:center;
+backdrop-filter: blur(8px);
 }
 
 .card:hover{
@@ -96,14 +101,33 @@ transform:translateY(-8px);
 border-color:#f97316;
 }
 
-footer{
-text-align:center;
-padding:25px;
-background:#020617;
-color:#94a3b8;
-font-size:14px;
+/* TAGS */
+.tag{
+display:inline-block;
+padding:4px 10px;
+font-size:12px;
+background:#111827;
+border:1px solid #374151;
+border-radius:20px;
+margin-bottom:10px;
+color:#9ca3af;
 }
 
+/* FOUNDER */
+.founder{
+background:#0b1220;
+padding:60px 20px;
+text-align:center;
+border-top:1px solid #1f2937;
+border-bottom:1px solid #1f2937;
+}
+
+.founder-box{
+max-width:800px;
+margin:auto;
+}
+
+/* WHATSAPP */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -114,116 +138,108 @@ padding:15px 18px;
 border-radius:50px;
 text-decoration:none;
 font-weight:700;
-box-shadow:0 4px 15px rgba(0,0,0,0.3);
+box-shadow:0 4px 15px rgba(0,0,0,0.4);
 }
 
-.section-note{
+footer{
 text-align:center;
-color:#cbd5e1;
-max-width:800px;
-margin:auto;
-}
-
-/* Founder Section */
-.founder{
-background:#0f172a;
-padding:60px 20px;
-text-align:center;
-}
-
-.founder-box{
-max-width:800px;
-margin:auto;
-background:rgba(255,255,255,0.05);
-padding:25px;
-border-radius:15px;
-border:1px solid rgba(255,255,255,0.1);
+padding:20px;
+color:#6b7280;
+font-size:13px;
+background:#05070d;
 }
 </style>
-
 </head>
 
 <body>
 
-<header>
+<!-- HERO -->
+<div class="hero">
 <h1>Mechscale Design & Engineering Institute</h1>
-<p>Professional CAD Training Institute offering Architectural & Mechanical design software training with real industry projects.</p>
+<p>CAD Training in Mechanical & Architectural Design — Industry-Level Skills in AutoCAD, SolidWorks, CATIA, Fusion 360, SketchUp & 3ds Max</p>
 
-<a class="btn" href="https://wa.me/919408694678?text=Hi%20I%20want%20free%20demo%20class%20details" target="_blank">
-Book Free Demo Class
-</a>
-</header>
-
-<div class="trust">
-<div>✔ 12+ Years Experience</div>
-<div>✔ 500+ Students Trained</div>
-<div>✔ Online Training Only</div>
+<a class="cta" href="https://wa.me/919408694678?text=Hi%20I%20want%20free%20demo%20class">Book Free Demo Class</a>
 </div>
 
+<!-- TRUST -->
 <section>
-<h2>Courses Offered</h2>
+<h2>Engineering Training Focus</h2>
+<div class="grid">
+
+<div class="card">
+<div class="tag">Mechanical CAD</div>
+<p>AutoCAD, SolidWorks, Fusion 360, Inventor, Solid Edge</p>
+</div>
+
+<div class="card">
+<div class="tag">Architectural CAD</div>
+<p>AutoCAD 2D/3D, SketchUp, 3ds Max, Rendering Tools</p>
+</div>
+
+<div class="card">
+<div class="tag">Simulation Ready</div>
+<p>Industry workflow understanding for real engineering projects</p>
+</div>
+
+</div>
+</section>
+
+<!-- SOFTWARE -->
+<section>
+<h2>Software Ecosystem</h2>
 
 <div class="grid">
 
 <div class="card">
-<h3>Architectural Design Tools</h3>
-<p>AutoCAD 2D + 3D, SketchUp, 3Ds Max<br>V-Ray, Corona, Enscape</p>
+<h3>Design Tools</h3>
+<p>AutoCAD • SolidWorks • CATIA • Creo • NX CAD</p>
 </div>
 
 <div class="card">
-<h3>Mechanical CAD</h3>
-<p>AutoCAD 2D + 3D, FreeCAD, Fusion 360<br>Inventor, Solid Edge, SolidWorks</p>
+<h3>Mechanical Systems</h3>
+<p>Fusion 360 • Inventor • Solid Edge • FreeCAD</p>
 </div>
 
 <div class="card">
-<h3>Product Design</h3>
-<p>Surface Modeling, Assembly Design<br>Engineering Project Practice</p>
-</div>
-
-<div class="card">
-<h3>Career Growth</h3>
-<p>Portfolio Building & Interview Preparation<br>Job-Oriented CAD Skills</p>
+<h3>Visualization</h3>
+<p>SketchUp • 3ds Max • V-Ray • Corona • Enscape</p>
 </div>
 
 </div>
 </section>
 
-<!-- Founder Section ADDED BACK -->
+<!-- FOUNDER -->
 <section class="founder">
-<h2>Founder</h2>
-
 <div class="founder-box">
+<h2>Founder</h2>
 <h3>Hardik Acharya</h3>
 <p>
 Mechanical Design Professional with <b>12+ years of experience</b> in CAD training and engineering design industry.
-</p>
-
-<p>
-Founder of <b>Mechscale Design & Engineering Institute</b>, focused on practical, industry-oriented CAD training for students and professionals.
+Founder of Mechscale Design & Engineering Institute focused on practical, industry-oriented engineering education.
 </p>
 </div>
 </section>
 
+<!-- CTA -->
 <section>
-<h2>Get Started</h2>
-
-<p class="section-note">
-Click below to connect instantly on WhatsApp for free demo class and course details.
+<h2>Start Your CAD Career</h2>
+<p style="text-align:center;color:#9ca3af;">
+Get guidance, demo class, and course details directly on WhatsApp
 </p>
 
-<div style="text-align:center;margin-top:25px;">
-<a class="btn" href="https://wa.me/919408694678?text=Hi%20I%20want%20free%20demo%20class%20details">
-Start on WhatsApp
+<div style="text-align:center;margin-top:20px;">
+<a class="cta" href="https://wa.me/919408694678?text=Hi%20I%20want%20to%20join%20Mechscale%20CAD%20training">
+Contact on WhatsApp
 </a>
 </div>
-
 </section>
 
+<!-- FOOTER -->
 <footer>
 © 2025 Mechscale Design & Engineering Institute | All Rights Reserved
 </footer>
 
-<a class="whatsapp" href="https://wa.me/919408694678?text=Hi%20I%20am%20interested%20in%20CAD%20training">WhatsApp</a>
+<a class="whatsapp" href="https://wa.me/919408694678">WhatsApp</a>
 
 </body>
 </html>
