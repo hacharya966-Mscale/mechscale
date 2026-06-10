@@ -21,7 +21,11 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+
+html{
+scroll-behavior:smooth;
+scroll-padding-top:85px; /* Added to prevent fixed nav from overlapping section titles */
+}
 
 body{
 font-family:'Space Grotesk',sans-serif;
@@ -61,6 +65,7 @@ z-index:1000;
 .logo{
 font-size:1.5rem;
 font-weight:700;
+flex-shrink:0;
 }
 
 .logo span{color:var(--accent)}
@@ -74,6 +79,12 @@ list-style:none;
 nav a{
 text-decoration:none;
 color:var(--muted);
+font-weight:500;
+transition:color 0.2s ease;
+}
+
+nav a:hover{
+color:var(--text);
 }
 
 .hero{
@@ -112,6 +123,11 @@ color:white;
 text-decoration:none;
 border-radius:10px;
 font-weight:700;
+transition:opacity 0.2s ease;
+}
+
+.btn:hover{
+opacity:0.9;
 }
 
 .stats{
@@ -215,6 +231,12 @@ background:var(--card);
 margin-bottom:15px;
 padding:18px;
 border-radius:10px;
+border:1px solid transparent;
+transition:border-color 0.3s ease;
+}
+
+details:hover{
+border-color:rgba(255,255,255,.08);
 }
 
 summary{
@@ -226,11 +248,23 @@ font-weight:600;
 text-align:center;
 }
 
+/* Converted to a semantic form layout */
 .contact-form{
 max-width:600px;
 margin:30px auto;
 display:grid;
 gap:15px;
+}
+
+.sr-only {
+position:absolute;
+width:1px;
+height:1px;
+padding:0;
+margin:-1px;
+overflow:hidden;
+clip:rect(0,0,0,0);
+border:0;
 }
 
 input,textarea{
@@ -239,6 +273,23 @@ background:#0f172a;
 border:1px solid var(--border);
 color:white;
 border-radius:10px;
+font-family:inherit;
+font-size:1rem;
+}
+
+input:focus,textarea:focus{
+outline:none;
+border-color:var(--accent);
+}
+
+textarea{
+resize:vertical; /* Prevents layout breaking horizontally */
+}
+
+.submit-btn{
+border:none;
+cursor:pointer;
+margin-top:10px;
 }
 
 footer{
@@ -258,10 +309,30 @@ padding:15px 20px;
 border-radius:50px;
 text-decoration:none;
 font-weight:700;
+z-index:999;
+box-shadow:0 4px 12px rgba(0,0,0,0.3);
 }
 
+/* Clean up mobile UI instead of completely vanishing the navbar */
 @media(max-width:768px){
-nav ul{display:none;}
+nav{
+padding:0 5%;
+}
+nav ul{
+display:flex;
+gap:15px;
+overflow-x:auto;
+padding-bottom:5px;
+max-width:65%;
+white-space:nowrap;
+-webkit-overflow-scrolling:touch;
+}
+nav ul::-webkit-scrollbar {
+display:none; /* Keep it clean visually */
+}
+nav a{
+font-size:0.9rem;
+}
 }
 </style>
 </head>
@@ -280,9 +351,7 @@ nav ul{display:none;}
 </nav>
 
 <section class="hero">
-
-<div>
-
+<header>
 <h1>Industry Ready <span>CAD Training</span> For Future Engineers</h1>
 
 <p>
@@ -309,18 +378,14 @@ Book Free Demo Class
 <p>CAD Platforms</p>
 </div>
 </div>
-
-</div>
-
+</header>
 </section>
 
 <section id="courses">
-
 <h2 class="section-title">Professional CAD Programs</h2>
 <p class="section-sub">Mechanical & Architectural Design Training</p>
 
 <div class="grid">
-
 <div class="card">
 <h3>Mechanical CAD Design</h3>
 <p>
@@ -341,17 +406,13 @@ AutoCAD 2D/3D, SketchUp, 3ds Max, V-Ray, Corona, Enscape and Lumion.
 Learn drawing standards, assemblies, manufacturing workflow and professional documentation.
 </p>
 </div>
-
 </div>
-
 </section>
 
 <section id="software">
-
 <h2 class="section-title">Software Ecosystem</h2>
 
 <div class="grid">
-
 <div class="card">
 <h3>Mechanical Tools</h3>
 <p>AutoCAD • SolidWorks • CATIA • Creo • NX</p>
@@ -366,13 +427,10 @@ Learn drawing standards, assemblies, manufacturing workflow and professional doc
 <h3>Visualization</h3>
 <p>SketchUp • 3ds Max • V-Ray • Lumion • Enscape</p>
 </div>
-
 </div>
-
 </section>
 
 <section id="roadmap">
-
 <h2 class="section-title">Learning Roadmap</h2>
 
 <div class="timeline">
@@ -383,65 +441,63 @@ Learn drawing standards, assemblies, manufacturing workflow and professional doc
 <div class="step">05 — Industry Workflow</div>
 <div class="step">06 — Portfolio & Career Guidance</div>
 </div>
-
 </section>
 
 <section id="founder" class="founder">
-
 <h2 class="section-title">Founder</h2>
-
 <h3>Hardik Acharya</h3>
-
 <p>
 Mechanical Design Professional with 12+ years of CAD training and engineering design experience. Founder of Mechscale Design & Engineering Institute focused on practical, industry-oriented education.
 </p>
-
 </section>
 
 <section class="faq">
-
 <h2 class="section-title">Frequently Asked Questions</h2>
 
 <details>
 <summary>Do I need prior CAD knowledge?</summary>
-<p>No. Courses start from fundamentals.</p>
+<p style="margin-top: 10px; color: var(--muted);">No. Courses start from fundamentals.</p>
 </details>
 
 <details>
 <summary>Are projects included?</summary>
-<p>Yes. Industry-oriented practical projects are included.</p>
+<p style="margin-top: 10px; color: var(--muted);">Yes. Industry-oriented practical projects are included.</p>
 </details>
 
 <details>
 <summary>Is placement guidance available?</summary>
-<p>Portfolio building and career guidance are provided.</p>
+<p style="margin-top: 10px; color: var(--muted);">Portfolio building and career guidance are provided.</p>
 </details>
-
 </section>
 
 <section id="contact" class="contact">
-
 <h2 class="section-title">Contact Mechscale</h2>
-
 <p>Get course details and free counselling.</p>
 
-<div class="contact-form">
-<input type="text" placeholder="Your Name">
-<input type="tel" placeholder="Phone Number">
-<textarea rows="5" placeholder="Your Message"></textarea>
-</div>
+<form class="contact-form" action="#" method="POST">
+<label for="student-name" class="sr-only">Your Name</label>
+<input type="text" id="student-name" placeholder="Your Name" required>
 
-<a href="https://wa.me/919408694678" class="btn">
+<label for="phone-number" class="sr-only">Phone Number</label>
+<input type="tel" id="phone-number" placeholder="Phone Number" required>
+
+<label for="message" class="sr-only">Your Message</label>
+<textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+
+<button type="submit" class="btn submit-btn">Submit Inquiry</button>
+</form>
+
+<p style="margin-top:20px; font-size:0.9rem; color:var(--muted)">Or reach out instantly via</p>
+<a href="https://wa.me/919408694678" class="btn" style="margin-top:10px; background:#25D366;">
 Contact on WhatsApp
 </a>
-
 </section>
 
 <footer>
-© 2025 Mechscale Design & Engineering Institute | Surat, Gujarat
+© 2026 Mechscale Design & Engineering Institute | Surat, Gujarat
 </footer>
 
-<a href="https://wa.me/919408694678" class="whatsapp">
+<a href="https://wa.me/919408694678" class="whatsapp" aria-label="Contact us on WhatsApp">
 WhatsApp
 </a>
 
